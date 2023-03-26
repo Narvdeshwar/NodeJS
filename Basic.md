@@ -14,6 +14,7 @@ http.createServer((req,res)=>{
     res.write("<h1>Hello world</h1>");
     res.end();
 }).listen(4000)
+//createServer()=> this function takes funtion as a parameter
 ```
 
 # JSON.stringyfy()

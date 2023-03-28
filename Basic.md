@@ -16,5 +16,9 @@ http.createServer((req,res)=>{
 }).listen(4000)
 //createServer()=> this function takes funtion as a parameter
 ```
+# passing fuction as parameter
+```js
+```
+# Making static api
 
 # JSON.stringyfy()

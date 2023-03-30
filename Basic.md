@@ -44,5 +44,8 @@ app.listen(4500,()=>{
     console.log('app is running');
 })
 ```
-## res.writeHead(): it is inbuild property of http module which sends a response header to request.
+## res.writeHead(): 
+1. it is inbuild property of http module which sends a response header to request.
+2.  **Syntax:** res.writeHead(statusCode,statusMessage,header)
+
 # JSON.stringyfy()

@@ -28,7 +28,7 @@ function ans(sum){
 ans(sum)
 
 ```
-# Making simple api
+# Making simple API
 ```js
 const http=require('http');
 
@@ -41,7 +41,8 @@ const app=http.createServer((req,res)=>{
 })
 
 app.listen(4500,()=>{
-    console.log('app us running');
+    console.log('app is running');
 })
 ```
+## res.writeHead(): it is inbuild property of http module which sends a response header to request.
 # JSON.stringyfy()

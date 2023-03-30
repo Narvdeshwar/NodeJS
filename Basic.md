@@ -18,6 +18,15 @@ http.createServer((req,res)=>{
 ```
 # passing fuction as parameter
 ```js
+function sum(a,b){
+    return a+b;
+}
+function ans(sum){
+    const res=sum(2,3)
+    console.log(res); // 5
+}
+ans(sum)
+
 ```
 # Making static api
 

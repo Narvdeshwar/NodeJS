@@ -28,6 +28,20 @@ function ans(sum){
 ans(sum)
 
 ```
-# Making static api
+# Making simple api
+```js
+const http=require('http');
 
+const data={'name':'Ashrith','branch':'CSE','rollno':'1904220109009'};
+
+const app=http.createServer((req,res)=>{
+    res.writeHead(200,{'Content-Type':'application/json'}) 
+    res.write(JSON.stringify(data))
+    res.end()
+})
+
+app.listen(4500,()=>{
+    console.log('app us running');
+})
+```
 # JSON.stringyfy()

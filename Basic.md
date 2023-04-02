@@ -48,4 +48,4 @@ app.listen(4500,()=>{
 1. it is inbuild property of http module which sends a response header to request.
 2.  **Syntax:** res.writeHead(statusCode,statusMessage,header)
 
-# JSON.stringyfy()
+# JSON.stringify()

@@ -20,3 +20,5 @@ app.listen(port,()=>{
 })
 ```
 # output 
+[
+![Screenshot from 2023-04-04 21-58-04](https://user-images.githubusercontent.com/56790381/229857542-abe0d40d-40e0-4f3a-b630-692a6b8f9ee4.png)]

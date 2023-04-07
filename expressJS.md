@@ -44,7 +44,40 @@ app.listen(port,()=>{
     console.log(`app is running at port ${port}`);
 })
 ```
+### homepage
 ![Screenshot from 2023-04-07 09-30-57](https://user-images.githubusercontent.com/56790381/230538546-2d9e65d3-07b3-404b-8d94-2039050fb75a.png)
-
+### about page
 ![Screenshot from 2023-04-07 09-31-09](https://user-images.githubusercontent.com/56790381/230538555-3a33305f-3fdf-4775-aeda-6d3be504fdf6.png)
+
+## removing extension 
+```js
+const express = require('express');
+const path=require('path');
+
+const port=4500
+const app=express(); //executable express 
+
+const publicPath=path.join(__dirname,'public');
+
+app.get('/',(req,res)=>{
+    res.sendFile(`${publicPath}/index.html`);    
+})
+
+app.get('/about',(req,res)=>{
+    res.sendFile(`${publicPath}/about.html`)
+})
+app.get('*',(req,res)=>{
+    res.sendFile(`${publicPath}/404.html`)
+})
+app.listen(port,()=>{
+    console.log(`app is running at port ${port}`);
+})
+```
+### homepage
+
+### about page
+
+### 404 page
+
+
 

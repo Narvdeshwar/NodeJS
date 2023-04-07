@@ -76,12 +76,10 @@ app.listen(port,()=>{
 ```
 ### homepage
 ![Screenshot from 2023-04-07 19-44-18](https://user-images.githubusercontent.com/56790381/230624782-9b0ce94f-54e8-441c-9e08-d337345bca54.png)
-![Screenshot from 2023-04-07 19-44-35](https://user-images.githubusercontent.com/56790381/230624791-0cc9a8e9-719b-431a-a023-8f3049b3253b.png)
-![Screenshot from 2023-04-07 19-44-45](https://user-images.githubusercontent.com/56790381/230624794-3ebe2d73-1c0c-47c1-8da5-427d0755bd28.png)
-
 ### about page
-
+![Screenshot from 2023-04-07 19-44-35](https://user-images.githubusercontent.com/56790381/230624791-0cc9a8e9-719b-431a-a023-8f3049b3253b.png)
 ### 404 page
+![Screenshot from 2023-04-07 19-44-45](https://user-images.githubusercontent.com/56790381/230624794-3ebe2d73-1c0c-47c1-8da5-427d0755bd28.png)
 
 
 

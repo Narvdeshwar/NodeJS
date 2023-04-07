@@ -66,6 +66,7 @@ app.get('/',(req,res)=>{
 app.get('/about',(req,res)=>{
     res.sendFile(`${publicPath}/about.html`)
 })
+// execute below code if above file path doesn't exits
 app.get('*',(req,res)=>{
     res.sendFile(`${publicPath}/404.html`)
 })

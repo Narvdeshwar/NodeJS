@@ -44,5 +44,7 @@ app.listen(port,()=>{
     console.log(`app is running at port ${port}`);
 })
 ```
+![Screenshot from 2023-04-07 09-30-57](https://user-images.githubusercontent.com/56790381/230538546-2d9e65d3-07b3-404b-8d94-2039050fb75a.png)
 
+![Screenshot from 2023-04-07 09-31-09](https://user-images.githubusercontent.com/56790381/230538555-3a33305f-3fdf-4775-aeda-6d3be504fdf6.png)
 

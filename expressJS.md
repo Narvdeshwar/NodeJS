@@ -84,6 +84,7 @@ app.listen(port,()=>{
 # Middleware 
 middleware are the function which are used with routes and also helps to access reqeuest and response and also modify them.
 ```js
+//application level middle
 const express=require('express');
 const app=express();
 const reqFilter=(req,res,next)=>{

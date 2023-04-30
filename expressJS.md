@@ -108,8 +108,8 @@ app.listen(4000,()=>{
 ![Screenshot from 2023-04-30 10-49-18](https://user-images.githubusercontent.com/56790381/235337069-2b0fbf0f-a0be-45bd-a8bd-632ba773b386.png)
 
 # different type of middleware
-1. Application-level middleware which runs for all routes in an app object
-2. Router level middleware which runs for all routes in a router object
-3. Built-in middleware provided by Express like express.static, express.json, express.urlencoded
-4. Error handling middleware for handling errors
+1. **Application-level middleware** which runs for all routes in an app object
+2. **Router level middleware** which runs for all routes in a router object
+3. **Built-in middleware** provided by Express like express.static, express.json, express.urlencoded
+4. **Error handling middleware** for handling errors
 

@@ -103,5 +103,7 @@ app.listen(4000,()=>{
 })
 ```
 ## if requested query age is below 18
+![Screenshot from 2023-04-30 10-48-59](https://user-images.githubusercontent.com/56790381/235337072-ca09bd81-d2ad-4777-b8f5-2d9e4fda3ee8.png)
 ## if requested query age is greater than 18
+![Screenshot from 2023-04-30 10-49-18](https://user-images.githubusercontent.com/56790381/235337069-2b0fbf0f-a0be-45bd-a8bd-632ba773b386.png)
 

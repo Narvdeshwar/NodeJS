@@ -81,7 +81,7 @@ app.listen(port,()=>{
 ### 404 page
 ![Screenshot from 2023-04-07 19-44-45](https://user-images.githubusercontent.com/56790381/230624794-3ebe2d73-1c0c-47c1-8da5-427d0755bd28.png)
 
-# middleware 
+# Middleware 
 middleware are the function which are used with routes and also helps to access reqeuest and response and also modify them.
 ```js
 const express=require('express');
@@ -106,4 +106,10 @@ app.listen(4000,()=>{
 ![Screenshot from 2023-04-30 10-48-59](https://user-images.githubusercontent.com/56790381/235337072-ca09bd81-d2ad-4777-b8f5-2d9e4fda3ee8.png)
 ## if requested query age is greater than 18
 ![Screenshot from 2023-04-30 10-49-18](https://user-images.githubusercontent.com/56790381/235337069-2b0fbf0f-a0be-45bd-a8bd-632ba773b386.png)
+
+# different type of middleware
+1. Application-level middleware which runs for all routes in an app object
+2. Router level middleware which runs for all routes in a router object
+3. Built-in middleware provided by Express like express.static, express.json, express.urlencoded
+4. Error handling middleware for handling errors
 

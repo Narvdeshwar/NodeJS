@@ -81,5 +81,27 @@ app.listen(port,()=>{
 ### 404 page
 ![Screenshot from 2023-04-07 19-44-45](https://user-images.githubusercontent.com/56790381/230624794-3ebe2d73-1c0c-47c1-8da5-427d0755bd28.png)
 
-
+# middleware 
+middleware are the function which are used with routes and also helps to access reqeuest and response and also modify them.
+```js
+const express=require('express');
+const app=express();
+const reqFilter=(req,res,next)=>{
+    if(req.query.age<18){ // if requested age will be below this 
+        res.send("you can't access this page");
+    } // others wise access this
+    else{
+        next();
+    }
+}
+app.use(reqFilter);
+app.get('/',(req,res)=>{
+    res.send('hello');
+})
+app.listen(4000,()=>{
+    console.log('app is running');
+})
+```
+## if requested query age is below 18
+## if requested query age is greater than 18
 

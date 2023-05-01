@@ -115,8 +115,7 @@ app.listen(4000,()=>{
 ![Screenshot from 2023-04-30 10-49-18](https://user-images.githubusercontent.com/56790381/235337069-2b0fbf0f-a0be-45bd-a8bd-632ba773b386.png)
 
 # 2. Router level middleware
-```
-js
+```js
 //middleware.js
 module.exports= reqFilter=(req,res,next)=>{
     if(!req.query.age){
@@ -130,8 +129,7 @@ module.exports= reqFilter=(req,res,next)=>{
     }
 }
 ```
-```
-js
+```js
 //index.js
 const express =require('express')
 const reqFilter=require('./middleware');

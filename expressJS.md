@@ -83,6 +83,12 @@ app.listen(port,()=>{
 
 # Middleware 
 middleware are the function which are used with routes and also helps to access reqeuest and response and also modify them.
+# different type of middleware
+1. **Application-level middleware** which runs for all routes in an app object
+2. **Router level middleware** which runs for all routes in a router object
+3. **Built-in middleware** provided by Express like express.static, express.json, express.urlencoded
+4. **Error handling middleware** for handling errors
+# 1. Application level middleware
 ```js
 //application level middle
 const express=require('express');
@@ -108,9 +114,47 @@ app.listen(4000,()=>{
 ## if requested query age is greater than 18
 ![Screenshot from 2023-04-30 10-49-18](https://user-images.githubusercontent.com/56790381/235337069-2b0fbf0f-a0be-45bd-a8bd-632ba773b386.png)
 
-# different type of middleware
-1. **Application-level middleware** which runs for all routes in an app object
-2. **Router level middleware** which runs for all routes in a router object
-3. **Built-in middleware** provided by Express like express.static, express.json, express.urlencoded
-4. **Error handling middleware** for handling errors
+# 2. Router level middleware
+```
+js
+//middleware.js
+module.exports= reqFilter=(req,res,next)=>{
+    if(!req.query.age){
+        res.send('<h1>Enter your age</h1>');
+    }
+    else if(req.query.age<18){
+        res.send('<h1>Your age is below 18');
+    }
+    else{
+        next();
+    }
+}
+```
+```
+js
+//index.js
+const express =require('express')
+const reqFilter=require('./middleware');
+const app=express();
+const route=express.Router('reqFilter');
 
+//app.use(reqFilter);
+app.use('/',route)
+route.use(reqFilter)
+app.get('/',(req,res)=>{
+    res.send('<h1>welcome to home page</h1>')
+})
+//particular route
+app.get('/about',reqFilter,(req,res)=>{
+    res.send('<h1>Welcome to about page</h1>');
+})
+//route level
+route.get('/contact',(req,res)=>{
+    res.send('<h2>You are at contact page</h2>');
+})
+app.listen(4500,(err)=>{
+    if(!err){
+        console.log('server is running at port 4500');
+    }
+})
+```

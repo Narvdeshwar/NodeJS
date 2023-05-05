@@ -20,3 +20,19 @@ getData();
 ### output
 
 ![Screenshot from 2023-05-05 14-21-08](https://user-images.githubusercontent.com/56790381/236415802-1e2ec06f-c497-454c-b396-9747ea18a986.png)
+
+```js
+//Accesing data from two different ways by handling the promise
+const dbConnect = require('./dbConnect');
+dbConnect().then((res)=>{
+    res.find().toArray().then((data)=>{
+        console.log(data);
+    })
+})
+const data=async ()=>{
+    let result=await dbConnect();
+    result=await  result.find().toArray()
+    console.log(result);
+}
+data();
+```

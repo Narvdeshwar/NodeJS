@@ -20,6 +20,18 @@ getData();
 ### output
 
 ![Screenshot from 2023-05-05 14-21-08](https://user-images.githubusercontent.com/56790381/236415802-1e2ec06f-c497-454c-b396-9747ea18a986.png)
+```
+dbConnect.js //database connection seprate file
+const {MongoClient} = require('mongodb');
+const url='mongodb+srv://Eternal:AshrithXYZ@testdb.l9j5njr.mongodb.net/?retryWrites=true&w=majority';
+const client=new MongoClient(url);
+dbConnect=async()=>{
+    const result=await client.connect();
+    const db=result.db('e-com');
+    return db.collection('products');
+}
+module.exports=dbConnect;
+```
 
 ```js
 //Accesing data from two different ways by handling the promise

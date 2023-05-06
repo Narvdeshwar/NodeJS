@@ -112,6 +112,7 @@ const deleteData=async()=>{
 deleteData()
 ```
 ## Basic crud api
+```js
 const express = require('express');
 const mongoDB = require('mongodb');
 const dbConnect = require('./dbConnect');
@@ -176,3 +177,4 @@ app.delete('/delete/:id',async(req,res)=>{
 app.listen(4000, () => {
     console.log("server is running !");
 })
+```

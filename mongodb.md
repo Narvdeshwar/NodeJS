@@ -111,3 +111,70 @@ const deleteData=async()=>{
 }
 deleteData()
 ```
+## Basic crud api
+```js
+ const express = require('express');
+const mongoDB = require('mongodb');
+const dbConnect = require('./dbConnect');
+const app = express();
+
+/**
+ * For fetching the data we use GET method
+ */
+app.get('/', async (req, res) => {
+    const db = await dbConnect();
+    const result = await db.find().toArray();
+    res.send(result)
+})
+
+/**
+ * For inserting data we use POST method
+ */
+app.use(express.json());
+app.post('/insert', async (req, res) => {
+    const db = await dbConnect();
+    const result = await db.insertOne(req.body)
+    if(result.acknowledged){
+        res.send("data inserted successfully");
+    }
+    else{
+        res.send("oops! some error occured");
+    }
+})
+/**
+ * For updating data we use PUT method
+ */
+app.put('/update',async (req,res)=>{
+    const db=await dbConnect();
+    const result=await db.updateOne(
+        {"name":"vivo v50"},
+        {$set: req.body}
+    )
+    if(result.modifiedCount==1){
+        res.send("data updated successfully");
+    }
+    else{
+        res.send("data already updated !");
+    }
+})
+/**
+ * For deleting data we DELETE method
+ */
+
+app.delete('/delete/:id',async(req,res)=>{
+    const db=await dbConnect();
+    const result=await db.deleteOne(
+        {_id:new mongoDB.ObjectId(req.params.id)}
+    )
+    if(result.deletedCount>0){
+        res.send("data deleted successfully");
+    }
+    else{
+        res.send("some error occured");
+    }
+})
+
+app.listen(4000, () => {
+    console.log("server is running !");
+})
+```

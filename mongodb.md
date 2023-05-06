@@ -49,3 +49,69 @@ const data=async ()=>{
 }
 data();
 ```
+### insert data in database
+```js
+const dbConnect = require('./dbConnect');
+const insertData=async()=>{
+    const db=await dbConnect();
+    const result=await db.insertMany(
+        [
+            {"name":"redmi note 5 pro","brand":"xiomi","price":11999},
+            {"name":"redmi note 6 pro","brand":"xiomi","price":12999}
+
+        ]
+    )
+    if(result.acknowledged){
+        console.log("data inserted succuessfully");
+    }
+    else{
+        console.log("Some error occured");
+    }
+}
+insertData();
+/**
+ * You can add multiple entry by using array.
+ * const result=await db.insertOne(
+        [
+            {"name":"redmi note 7 pro","brand":"xiomi","price":14999},
+            {"name":"redmi note 6 pro","brand":"xiomi","price":12999}
+
+        ]
+    )
+ */
+```
+### update data in database
+```js
+const dbConnect = require('./dbConnect');
+const updateData = async () => {
+    const db = await dbConnect();
+    const result = await db.updateOne(
+        { "name": "redmi note 9 pro" },
+        { $set: { "name": "note 9 pro" } }
+    )
+    if(result.modifiedCount==1){
+        console.log("data updated succuessfully");
+    }
+    else{
+        console.log("oops! data not updated");
+    }
+}
+updateData();
+```
+### delete data in database
+```js
+const dbConnect=require('./dbConnect');
+const deleteData=async()=>{
+    const db=await dbConnect();
+    const result=await db.deleteOne(
+        {"name":"note 9 pro"}
+    )
+    if(result.deletedCount>0){
+        console.log("data deleted succussfully");
+    }
+    else{
+        console.log("no more data exits to delete.");
+    }
+}
+deleteData()
+```

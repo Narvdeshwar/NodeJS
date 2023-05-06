@@ -55,11 +55,7 @@ const dbConnect = require('./dbConnect');
 const insertData=async()=>{
     const db=await dbConnect();
     const result=await db.insertMany(
-        [
-            {"name":"redmi note 5 pro","brand":"xiomi","price":11999},
-            {"name":"redmi note 6 pro","brand":"xiomi","price":12999}
-
-        ]
+        {"name":"redmi note 5 pro","brand":"xiomi","price":11999}
     )
     if(result.acknowledged){
         console.log("data inserted succuessfully");

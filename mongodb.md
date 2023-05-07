@@ -178,3 +178,42 @@ app.listen(4000, () => {
     console.log("server is running !");
 })
 ```
+### mongoose
+```js
+const mongoose = require('mongoose');
+mongoose.connect('mongodb+srv://eternal:AshrithXYZ@ecom.wgoervy.mongodb.net/?retryWrites=true&w=majority');
+const productSchema = new mongoose.Schema({
+    name: String,
+    brand: String,
+    price: Number,
+    category: String
+});
+const productModel = mongoose.model('products', productSchema);
+
+const SaveInDB = async () => {
+    let data = new productModel({ name: "lenovo k8 plus", brand: "lenovo", price: 12000, category: "mobile" });
+    let result = await data.save();
+}
+
+const UpdateInDB = async () => {
+    let data = await productModel.updateOne(
+        { name: "lenovo k8 plus" },
+        { $set: { name: "k8 plus" } })
+    console.log(data);
+}
+
+const deleteInDB=async()=>{
+    let data =await productModel.deleteOne({name:"k8 plus"});
+    console.log(data);
+}
+
+const findInDB=async ()=>{
+    let data =await productModel.find()
+    console.log(data);
+}
+SaveInDB();
+findInDB()
+//UpdateInDB();
+//deleteInDB()
+
+```
